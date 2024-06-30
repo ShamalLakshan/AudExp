@@ -11,7 +11,7 @@ def enhance_vocals(audio_path, output_path, method="harmonic"):
         method (optional): Either "harmonic" (default) for harmonic masking or "reconstruction" for MCA-based reconstruction.
     """
     # Load audio
-    y, sr = librosa.load(audio_path)
+    y, sr = librosa.load(audio_path, dtype=np.float32)
     if not np.issubdtype(y.dtype, np.cfloat):
         y = y.astype(np.float32)
 
