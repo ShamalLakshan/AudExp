@@ -37,6 +37,13 @@ def add_vinyl_effect(input_file, output_file):
     plt.figure(figsize=(12, 8))
     plt.subplot(2, 1, 1)
     librosa.display.waveshow(y, sr=sr)
+    plt.title('Original Audio')
+    plt.subplot(2, 1, 2)
+    librosa.display.waveshow(y_vinyl, sr=sr)
+    plt.title('Vinyl Effect Audio')
+    plt.tight_layout()
+    plt.show()
+
     
 
 
