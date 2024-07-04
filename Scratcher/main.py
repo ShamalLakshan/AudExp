@@ -32,6 +32,11 @@ def add_vinyl_effect(input_file, output_file):
     
     # Save the processed audio
     sf.write(output_file, y_vinyl, sr)
+
+    # Plot waveforms
+    plt.figure(figsize=(12, 8))
+    plt.subplot(2, 1, 1)
+    librosa.display.waveshow(y, sr=sr)
     
 
 
