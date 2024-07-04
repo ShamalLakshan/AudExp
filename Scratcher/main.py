@@ -13,6 +13,15 @@ def add_vinyl_effect(input_file, output_file):
     noise_len = len(y)
     vinyl_noise = np.random.normal(0, 0.005, noise_len)
 
+    # Generate crackling effect
+    crackle = np.random.normal(0, 0.002, noise_len)
+    crackle[np.abs(crackle) < 0.001] = 0
+    
+    # Generate low-frequency rumble
+    t = np.linspace(0, noise_len/sr, noise_len, endpoint=False)
+    rumble = 0.002 * np.sin(2 * np.pi * 5 * t)
+    
+
 
 input_file = ""
 output_file = ""
