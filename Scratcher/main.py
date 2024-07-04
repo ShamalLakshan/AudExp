@@ -27,6 +27,11 @@ def add_vinyl_effect(input_file, output_file):
     # Add vinyl effect to the original audio
     y_vinyl = y + vinyl_effect
     
+    # Normalize audio
+    y_vinyl = librosa.util.normalize(y_vinyl)
+    
+    # Save the processed audio
+    sf.write(output_file, y_vinyl, sr)
     
 
 
